@@ -1,7 +1,15 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import './TaskCard.css';
 
-const TaskCard = (props) => {
+interface TaskCardProps {
+  title: string;
+  completedAtDate?: string; //Optional property
+  dueDate: string;
+  assigneeName: string;
+}
+
+const TaskCard: React.FC<TaskCardProps> = (props) => {
     let text = "";
     let color = "";
     if(props.completedAtDate) {
