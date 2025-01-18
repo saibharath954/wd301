@@ -5,7 +5,7 @@ import './TaskCard.css';
 interface TaskCardProps {
   title: string;
   completedAtDate?: string; //Optional property
-  dueDate: string;
+  dueDate?: string;
   assigneeName: string;
 }
 
