@@ -6,14 +6,18 @@ interface Props {
 }
 
 const TaskList = (props: Props) => {
-  const list = props.tasks.map((task, idx) => (
-    <Task
-      key={idx}
-      title={task.title}
-      description={task.description}
-      dueDate={task.dueDate}
-    />
-  ));
+  const list = props.tasks.map((task) => {
+    console.log("Task data:", task); // Check if `id` is present
+
+    return (
+      <Task
+        key={task.id} 
+        item={task}
+        removeTask={() => {}}
+      />
+    );
+  
+  });
   return <>{list}</>;
 };
 
