@@ -4,7 +4,7 @@ import { TaskItem } from "./types";
 
 interface TaskProps {
   item: TaskItem ;
-  removeTask: (task: TaskItem) => void;
+  removeTask: (taskId: string) => void;
 }
 const Task = (props: TaskProps) => {
   const { item, removeTask } = props;
@@ -21,8 +21,8 @@ const Task = (props: TaskProps) => {
           </p>
         </div>
 
-        <button className="deleteTaskButton cursor-pointer flex items-center justify-center h-4 w-4 rounded-full my-5 mr-5"
-          onClick={() => removeTask(item)}>
+        <button className="deleteTaskButton cursor-pointer flex items-center justify-center h-4 w-4 rounded-full my-5 mr-5 bg-gray-400 text-white"
+          onClick={() => removeTask(item.id)}>
           X
         </button>
       </div>

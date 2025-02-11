@@ -9,6 +9,7 @@ import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Signin from "./pages/Signin";
 import ProtectedRoute from "./ProtectedRoute";
 import Layout from "./Layout";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
+  },
+  {
+    path: "/notfound",
+    element: <NotFound />,
   },
   {
     element: (
@@ -39,6 +44,10 @@ const router = createBrowserRouter([
         element: <TaskDetailsPage />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   }
 ]);
 
